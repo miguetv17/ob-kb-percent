@@ -1,7 +1,6 @@
-module.exports = function(kibana) {
-	return new kibana.Plugin({
-		uiExports: {
-			visTypes: ['plugins/ob-kb-percent/ob-kb-percent']
-		}
-	});
-};
+export default kibana =>  new kibana.Plugin({
+  name: 'ob-kb-percent',
+  uiExports: {
+    visTypes: ['plugins/ob-kb-percent/ob-kb-percent']
+  }
+});
