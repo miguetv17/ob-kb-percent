@@ -1,6 +1,6 @@
 // Create an Angular module for this plugin
 import { uiModules } from 'ui/modules'
-//import { tabifyAggResponse } from 'ui/agg_response/tabify/tabify';
+import { tabifyAggResponse } from 'ui/agg_response/tabify/tabify'
 
 const module = uiModules.get('kibana/ob-kb-percent', ['kibana'])
 
@@ -8,10 +8,9 @@ var numeral = require('numeral')
 
 module.controller('PercentController', function ($scope, Private) {
 
-
-  $scope.getValueFromAggs = function (tableGroups, type, params) {
+  $scope.getValueFromAggs = function (resp, tableGroups, type, params) {
     if (type === 'total') {
-      return tableGroups.tables[0].rows.length;
+      return resp.hits.total;
     }
     if (type === 'namedBucket') {
       for (var i = 0; i < tableGroups.tables.length; i++) {
@@ -36,25 +35,24 @@ module.controller('PercentController', function ($scope, Private) {
   }
 
   $scope.$watch('esResponse', function (resp) {
+
     if (resp) {
-      //var tabified = tabifyAggResponse($scope.vis, resp)
-      //console.log(tabified)
 
-      var numeratorType = $scope.vis.params.numeratorType
-      var numeratorParams = $scope.vis.params.numerator
-      var numerator = $scope.getValueFromAggs(resp, numeratorType,
-        numeratorParams)
+      const numeratorType = $scope.vis.params.numeratorType
+      const numeratorParams = $scope.vis.params.numerator
+      const numerator = $scope.getValueFromAggs(resp, tabifyAggResponse($scope.vis.getAggConfig(), resp), numeratorType, numeratorParams);
 
-      var denominatorType = $scope.vis.params.denominatorType
-      var denominatorParams = $scope.vis.params.denominator
-      var denominator = $scope.getValueFromAggs(resp, denominatorType,
-        denominatorParams)
+      const denominatorType = $scope.vis.params.denominatorType
+      const denominatorParams = $scope.vis.params.denominator
+      const denominator = $scope.getValueFromAggs(resp, tabifyAggResponse($scope.vis.getAggConfig(), resp), denominatorType, denominatorParams);
 
-      var ratio = numerator / denominator
-      if ($scope.vis.params.displayIncrement == true) { ratio = ratio - 1 }
+      let ratio = numerator / denominator
+      if ($scope.vis.params.displayIncrement === true) { ratio = ratio - 1 }
 
       console.log('numerator = ', numerator)
+
       console.log('denominator = ', denominator)
+
       $scope.ratio = numeral(ratio).format($scope.vis.params.format)
     }
   })

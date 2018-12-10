@@ -20,7 +20,7 @@ function PercentProvider (Private) {
     icon: 'fas fa-percent',
     description: 'Percent metric visualization.',
     category: CATEGORY.DATA,
-    //responseHandler: 'none',
+    responseHandler: 'none',
     visConfig: {
       defaults: {
         format: '0.000%',
