@@ -17,9 +17,9 @@ function PercentProvider (Private) {
   return VisFactory.createAngularVisualization({
     name: 'obPercent',
     title: 'Percent View',
-    icon: 'fas fa-percent',
+    icon: 'fa-hand-lizard-o',
     description: 'Percent metric visualization.',
-    category: CATEGORY.DATA,
+    category: CATEGORY.OTHER,
     responseHandler: 'none',
     visConfig: {
       defaults: {
