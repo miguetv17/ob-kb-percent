@@ -3,9 +3,9 @@
 	flex-wrap: wrap;
 	justify-content: space-around;
 	width: 100%;
-  	flex-direction: row;
-  	align-content: space-around;
-  	align-items: center;
+	flex-direction: row;
+	align-content: space-around;
+	align-items: center;
 }
 
 .percentview_wrapper {
