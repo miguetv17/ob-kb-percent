@@ -20,6 +20,7 @@ function PercentProvider (Private) {
     icon: 'fas fa-percent',
     description: 'Percent metric visualization.',
     category: CATEGORY.DATA,
+    //responseHandler: 'none',
     visConfig: {
       defaults: {
         format: '0.000%',
@@ -58,6 +59,11 @@ function PercentProvider (Private) {
             'max',
             'cardinality',
             'std_dev'],
+          defaults: [
+            {
+              type: 'count',
+              schema: 'tagsize',
+            }],
         },
         {
           group: 'buckets',
@@ -65,7 +71,7 @@ function PercentProvider (Private) {
           title: 'Aggregation',
           min: 1,
           max: 1,
-          aggFilter: '!geohash_grid',
+          aggFilter: ['!geohash_grid']
         }]),
     },
   })
