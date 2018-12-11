@@ -1,6 +1,9 @@
 {
   "name": "ob-kb-percent",
-  "version": "6.4.2",
+  "version": "0.0.0",
+  "kibana": {
+    "version": "6.4.2"
+  },
   "main": "index.js",
   "scripts": {
     "lint": "eslint",
