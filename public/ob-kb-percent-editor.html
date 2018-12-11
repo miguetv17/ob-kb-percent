@@ -1,14 +1,15 @@
 <div class="form-group">
-  <label>Number Format</label>
-  <input type="text" ng-model="editorState.params.format" class="form-control">
+  <label for="format">Number Format</label>
+  <input type="text" ng-model="editorState.params.format" id="format" class="form-control">
 
-  <label>Number Font Size - {{editorState.params.ratioFontSize}}pt</label>
-  <input type="range" ng-model="editorState.params.ratioFontSize" class="form-control" min="12" max="120"/>
+  <label for="ratioFontSize">Number Font Size - {{editorState.params.ratioFontSize}}pt</label>
+  <input type="range" ng-model="editorState.params.ratioFontSize" id="ratioFontSize" class="form-control" min="12"
+         max="120"/>
 
-  <label>Label</label>
-  <input type="text" ng-model="editorState.params.label" class="form-control">
+  <label for="label">Label</label>
+  <input type="text" ng-model="editorState.params.label" id="label" class="form-control">
 
-  <label>Label Placement</label>
+  <label for="placement">Label Placement</label>
   <select ng-model="editorState.params.labelPlacement" id="placement" class="form-control">
     <option value="top">Top</option>
     <option value="bottom">Bottom</option>
@@ -16,19 +17,20 @@
     <option value="right">Right</option>
   </select>
 
-  <label>Label Font Size - {{editorState.params.labelFontSize}}pt</label>
-  <input type="range" ng-model="editorState.params.labelFontSize" class="form-control" min="12" max="120"/>
+  <label for="labelFontSize">Label Font Size - {{editorState.params.labelFontSize}}pt</label>
+  <input type="range" ng-model="editorState.params.labelFontSize" id="labelFontSize" class="form-control" min="12"
+         max="120"/>
 
   <hr>
 
   <div class="form-group">
-    <label>Display percentage increment</label>
+    <label for="increment">Display percentage increment</label>
     <input type="checkbox" ng-model="editorState.params.displayIncrement" class="form-control" id="increment"
            class="form-control"/>
   </div>
 
   <div class="form-inline form-group">
-    <label class="control-label" for="numeratorType">Numerator : </label>
+    <label class="control-label" for="numeratorType">Numerator: </label>
     <select ng-model="editorState.params.numeratorType" id="numeratorType" class="form-control">
       <option value="total">Total hits</option>
       <option value="nthBucket">Nth Bucket</option>
@@ -36,13 +38,13 @@
     </select>
   </div>
 
-  <div ng-show="editorState.params.numeratorType == 'namedBucket'" class="form-inline form-group">
-    <label class="control-label" for="numerator.namedBucket">Numerator Bucket Name : </label>
+  <div ng-show="editorState.params.numeratorType === 'namedBucket'" class="form-inline form-group">
+    <label class="control-label" for="numerator.namedBucket">Numerator Bucket Name: </label>
     <input type="text" ng-model="editorState.params.numerator.namedBucket" id="numerator.namedBucket"
            class="form-control">
   </div>
 
-  <div ng-show="editorState.params.numeratorType == 'nthBucket'" class="form-inline form-group">
+  <div ng-show="editorState.params.numeratorType === 'nthBucket'" class="form-inline form-group">
     <label class="control-label" for="numerator.nthBucket">Numerator Bucket</label>
     <input type="number" ng-model="editorState.params.numerator.nthBucket" id="numerator.nthBucket"
            class="form-control">
@@ -51,7 +53,7 @@
   <hr>
 
   <div class="form-inline form-group">
-    <label class="control-label" for="denominator">Denominator</label>
+    <label class="control-label" for="denominator">Denominator: </label>
     <select ng-model="editorState.params.denominatorType" id="denominator" class="form-control">
       <option value="total">Total hits</option>
       <option value="nthBucket">Nth Bucket</option>
@@ -59,16 +61,15 @@
     </select>
   </div>
 
-  <div ng-show="editorState.params.denominatorType == 'namedBucket'" class="form-inline form-group">
+  <div ng-show="editorState.params.denominatorType === 'namedBucket'" class="form-inline form-group">
     <label class="control-label" for="denominator.namedBucket">Numerator Bucket Name</label>
     <input type="text" ng-model="editorState.params.denominator.namedBucket" id="denominator.namedBucket"
            class="form-control">
   </div>
 
-  <div ng-show="editorState.params.denominatorType == 'nthBucket'" class="form-inline form-group">
+  <div ng-show="editorState.params.denominatorType === 'nthBucket'" class="form-inline form-group">
     <label class="control-label" for="denominator.nthBucket">Numerator Bucket</label>
     <input type="number" ng-model="editorState.params.denominator.nthBucket" id="denominator.nthBucket"
            class="form-control">
   </div>
-
 </div>

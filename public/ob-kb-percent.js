@@ -1,9 +1,7 @@
 import 'plugins/ob-kb-percent/ob-kb-percent-controller'
 import 'plugins/ob-kb-percent/ob-kb-percent.css'
-
 import mainTemplate from 'plugins/ob-kb-percent/ob-kb-percent.html'
 import optionsTemplate from 'plugins/ob-kb-percent/ob-kb-percent-editor.html'
-
 import { CATEGORY } from 'ui/vis/vis_category'
 import { VisFactoryProvider } from 'ui/vis/vis_factory'
 import { VisTypesRegistryProvider } from 'ui/registry/vis_types'
@@ -32,15 +30,15 @@ function PercentProvider (Private) {
         numeratorType: 'total',
         numerator: {
           nthBucket: 1,
-          namedBucket: '',
+          namedBucket: ''
         },
         denominatorType: 'total',
         denominator: {
           nthBucket: 1,
-          namedBucket: '',
-        },
+          namedBucket: ''
+        }
       },
-      template: mainTemplate,
+      template: mainTemplate
     },
     editorConfig: {
       optionsTemplate: optionsTemplate,
@@ -62,8 +60,8 @@ function PercentProvider (Private) {
           defaults: [
             {
               type: 'count',
-              schema: 'tagsize',
-            }],
+              schema: 'tagsize'
+            }]
         },
         {
           group: 'buckets',
@@ -72,8 +70,8 @@ function PercentProvider (Private) {
           min: 1,
           max: 1,
           aggFilter: ['!geohash_grid']
-        }]),
-    },
+        }])
+    }
   })
 }
 
