@@ -39,18 +39,21 @@ module.controller('PercentController', function ($scope, Private) {
 
       const numeratorType = $scope.vis.params.numeratorType
       const numeratorParams = $scope.vis.params.numerator
+      let tableGroups = tabifyAggResponse($scope.vis.getAggConfig(), resp)
       const numerator = $scope.getValueFromAggs(resp,
-        tabifyAggResponse($scope.vis.getAggConfig(), resp), numeratorType,
+        tableGroups, numeratorType,
         numeratorParams)
 
       const denominatorType = $scope.vis.params.denominatorType
       const denominatorParams = $scope.vis.params.denominator
       const denominator = $scope.getValueFromAggs(resp,
-        tabifyAggResponse($scope.vis.getAggConfig(), resp), denominatorType,
+        tableGroups, denominatorType,
         denominatorParams)
 
       let ratio = numerator / denominator
-      if ($scope.vis.params.displayIncrement === true) { ratio = ratio - 1 }
+      if ($scope.vis.params.displayIncrement === true) { 
+        ratio = Math.abs(ratio - 1)
+      }
 
       $scope.ratio = numeral(ratio).format($scope.vis.params.format)
     }
