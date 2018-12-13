@@ -2,7 +2,7 @@
  "name": "ob-kb-percent",
  "version": "6.1.0",
   "kibana": {
-    "version": "6.4.2",
+    "version": "kibana",
     "templateVersion": "1.0.0"
   },
  "devDependencies": {

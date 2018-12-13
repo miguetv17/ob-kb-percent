@@ -55,7 +55,7 @@ function PercentProvider(Private) {
 		,
 		aggFilter: ['count', 'avg', 'sum', 'min', 'max', 'cardinality', 'std_dev'],
         defaults: [{
-          type: 'tagsize',
+          type: 'count',
           schema: 'metric'
         }]
       }, 

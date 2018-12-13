@@ -41,9 +41,8 @@ module.controller('PercentController', function($scope, Private) {
       if (resp) {
         //var tabified = tabifyAggResponse($scope.vis, resp);
         //console.log("tabified: " + tabified);
-        console.log("resp.tables[0].rows.length: " + resp.tables[0].rows.length);
-
-         let tableGroups = tabifyAggResponse($scope.vis.getAggConfig(), resp)
+				let tableGroups = tabifyAggResponse($scope.vis.getAggConfig(), resp)
+        console.log("resp.tables[0].rows.length: " + tableGroups.tables[0].rows.length);
 
 		var numeratorType = $scope.vis.params.numeratorType;
 		var numeratorParams = $scope.vis.params.numerator;
