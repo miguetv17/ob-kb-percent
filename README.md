@@ -1,7 +1,7 @@
 # Kibana Percent Metric Visualization
 
 Kibana Visualization plugin for displaying a single ratio (percent) metric. Customize the numerator and denominator of the calculation.
-Developed for kibana 6.4.
+Developed for kibana 4.
 Based on [Tim Roes]'s awesome blog + examples.
 
 ### Example
@@ -9,7 +9,7 @@ Based on [Tim Roes]'s awesome blog + examples.
 
 ### Installation
 #### Via Kibana CLI
-`kibana-plugin install https://github.com/outbrain/ob-kb-percent/archive/master.zip`
+`kibana plugin -i ob-kb-percent -u https://github.com/outbrain/ob-kb-percent/archive/master.zip`
 #### Via Chef
 ```
 git '/opt/kibana/installedPlugins/ob-kb-percent' do

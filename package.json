@@ -1,24 +1,24 @@
 {
-  "name": "ob-kb-percent",
-  "version": "0.0.0",
+ "name": "ob-kb-percent",
+ "version": "6.1.0",
   "kibana": {
-    "version": "6.4.2"
+    "version": "6.4.2",
+    "templateVersion": "1.0.0"
   },
-  "main": "index.js",
-  "scripts": {
-    "lint": "eslint",
-    "start": "plugin-helpers start",
-    "test:server": "plugin-helpers test_server",
-    "test:browser": "plugin-helpers test_browser",
-    "build": "plugin-helpers build",
-    "postinstall": "plugin-helpers postinstall"
-  },
-  "devDependencies": {
-    "numeral": "^1.5.3",
-    "@elastic/eslint-config-kibana": "0.0.2",
-    "babel-eslint": "4.1.8",
-    "eslint": "1.10.3",
-    "eslint-plugin-mocha": "1.1.0",
-    "@elastic/plugin-helpers": "5.0.0-beta1"
-  }
+ "devDependencies": {
+  "numeral": "^1.5.3",
+  "@elastic/eslint-config-kibana": "0.0.2",
+  "babel-eslint": "4.1.8",
+  "eslint": "1.10.3",
+  "eslint-plugin-mocha": "1.1.0",
+  "@elastic/plugin-helpers": "5.0.0-beta1"
+ },
+ "scripts": {
+  "lint": "eslint",
+  "start": "plugin-helpers start",
+  "test:server": "plugin-helpers test_server",
+  "test:browser": "plugin-helpers test_browser",
+  "build": "plugin-helpers build",
+  "postinstall": "plugin-helpers postinstall"
+ }
 }
